@@ -14,3 +14,24 @@ console.log(expression1);
 console.log(expression2);
 console.log(expression3);
 console.log(expression4);
+const age1 = 25;
+const hasDriverLicense = true;
+const hasCar = false;
+let canDrive = false;
+let canRentCar = false;
+let needDriver = false;
+
+if (age1 >= 18 && hasDriverLicense) {
+    canDrive = true;
+    console.log(canDrive);
+} else if (age1 >= 22 && hasDriverLicense && hasCar) {
+    canRentCar = true;
+    console.log(canRentCar);
+}
+
+if (age1 < 18 && !hasDriverLicense && hasCar) {
+    needDriver = true;
+}
+
+
+
