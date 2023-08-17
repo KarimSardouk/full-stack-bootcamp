@@ -24,15 +24,15 @@ let brackets = {};
 let squarebracket = [];
 let nul1 = null;
 let undef = undefined;
-console.log(txt +' '+  typeof txt);
-console.log(bool1  +' '+  typeof bool1);
-console.log(bool2  +' '+  typeof bool2);
-console.log(number1 +' '+ typeof number1);
-console.log(str1 +' '+ typeof str1);
-console.log(brackets +' '+ typeof brackets);
-console.log(squarebracket +' '+ typeof squarebracket);
-console.log(nul1 +' '+ nul1);
-console.log(undef +' '+ undef);
+console.log(txt + ' ' + typeof txt);
+console.log(bool1 + ' ' + typeof bool1);
+console.log(bool2 + ' ' + typeof bool2);
+console.log(number1 + ' ' + typeof number1);
+console.log(str1 + ' ' + typeof str1);
+console.log(brackets + ' ' + typeof brackets);
+console.log(squarebracket + ' ' + typeof squarebracket);
+console.log(nul1 + ' ' + nul1);
+console.log(undef + ' ' + undef);
 const myText = "Hello World";
 console.log(myText);
 const myText1 = 'Hello';
@@ -46,38 +46,38 @@ const counter = 3;
 const backtick = `This is my text using backticks ${counter} times`;
 let backtickexplained = "Backticks (Template Literals) with Variable Interpolation: When using backticks, you can directly interpolate variables by enclosing them in ${}. The variables inside ${} are evaluated, and their values are inserted into the string. This is evident in the backtick example."
 const singleQuote =
-  'This is my text using single quotations ${counter} times';
+    'This is my text using single quotations ${counter} times';
 let singleQuotexp = "When using single quotations, the counter doesn't have an effect and the number doesn't show";
 const doubleQuote =
-  'This is my text using double quotations ${counter} times';
-  let doubleQuotexp =
-  'when using double quotes, the counter is not showing';
+    'This is my text using double quotations ${counter} times';
+let doubleQuotexp =
+    'when using double quotes, the counter is not showing';
 const tryThisAlso = `This is my new version, it’s the ${2 + 3}th version`;
 let tryThisAlsoexp = 'in this case, when adding two numbers within ${}, the operation is done and the output is the sum of the two numbers'
 
 console.log(counter);
-console.log(backtick + '.' + '   '+ backtickexplained);
-console.log(singleQuote + '.' + ' '+ singleQuotexp);
-console.log(doubleQuote + '.' + ' '+ doubleQuotexp);
-console.log(tryThisAlso + '.' + ' '+ tryThisAlsoexp);
+console.log(backtick + '.' + '   ' + backtickexplained);
+console.log(singleQuote + '.' + ' ' + singleQuotexp);
+console.log(doubleQuote + '.' + ' ' + doubleQuotexp);
+console.log(tryThisAlso + '.' + ' ' + tryThisAlsoexp);
 
 let Variable1 = "Code";
 let Variable2 = "everyday";
-let result = Variable1+' '+ Variable2;
+let result = Variable1 + ' ' + Variable2;
 console.log(result);
 
 let n1 = 5;
 let n2 = 5;
 let n3 = "5";
 let n4 = 10;
-console.log(n1===n2);
-console.log(n1===n3);
-console.log(n1!==n4);
-console.log(n1!==n3);
-console.log(n1==n3);
-console.log(n1==n2);
-console.log(n1!=n2);
-console.log(n1!=n4);
+console.log(n1 === n2);
+console.log(n1 === n3);
+console.log(n1 !== n4);
+console.log(n1 !== n3);
+console.log(n1 == n3);
+console.log(n1 == n2);
+console.log(n1 != n2);
+console.log(n1 != n4);
 console.log(10 > 5);    // true
 console.log("apple" > "banana"); // false (lexicographical comparison)
 console.log(7 >= 7);   // true
@@ -86,13 +86,13 @@ console.log(3 < 7);    // true
 console.log("banana" < "apple"); // false (lexicographical comparison)
 console.log(5 <= 5);   // true
 console.log(8 <= 3);   // false
-let result0 =   5 + 3 * 2;
+let result0 = 5 + 3 * 2;
 console.log(result0);
 let result1 = 10 / 2 + 3;
 console.log(result1);
-let result2 = 10 / (2+3);
+let result2 = 10 / (2 + 3);
 console.log(result2);
-console.log(result1===result2);
+console.log(result1 === result2);
 
 
 
