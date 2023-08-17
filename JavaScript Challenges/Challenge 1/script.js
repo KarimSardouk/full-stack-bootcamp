@@ -41,3 +41,28 @@ let firstName = "Johnny";
 let lastName5 = "Bravo";
 let firstLast = `My name is ${firstName} ${lastName5}`;
 console.log(firstLast);
+
+const counter = 3;
+const backtick = `This is my text using backticks ${counter} times`;
+let backtickexplained = "Backticks (Template Literals) with Variable Interpolation: When using backticks, you can directly interpolate variables by enclosing them in ${}. The variables inside ${} are evaluated, and their values are inserted into the string. This is evident in the backtick example."
+const singleQuote =
+  'This is my text using single quotations ${counter} times';
+let singleQuotexp = "When using single quotations, the counter doesn't have an effect and the number doesn't show";
+const doubleQuote =
+  'This is my text using double quotations ${counter} times';
+  let doubleQuotexp =
+  'when using double quotes, the counter is not showing';
+const tryThisAlso = `This is my new version, it’s the ${2 + 3}th version`;
+let tryThisAlsoexp = 'in this case, when adding two numbers within ${}, the operation is done and the output is the sum of the two numbers'
+
+console.log(counter);
+console.log(backtick + '.' + '   '+ backtickexplained);
+console.log(singleQuote + '.' + ' '+ singleQuotexp);
+console.log(doubleQuote + '.' + ' '+ doubleQuotexp);
+console.log(tryThisAlso + '.' + ' '+ tryThisAlsoexp);
+
+let Variable1 = "Code";
+let Variable2 = "everyday";
+let result = Variable1+' '+ Variable2;
+console.log(result);
+
