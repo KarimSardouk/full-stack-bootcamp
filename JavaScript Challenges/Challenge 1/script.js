@@ -66,3 +66,30 @@ let Variable2 = "everyday";
 let result = Variable1+' '+ Variable2;
 console.log(result);
 
+let n1 = 5;
+let n2 = 5;
+let n3 = "5";
+let n4 = 10;
+console.log(n1===n2);
+console.log(n1===n3);
+console.log(n1!==n4);
+console.log(n1!==n3);
+console.log(n1==n3);
+console.log(n1==n2);
+console.log(n1!=n2);
+console.log(n1!=n4);
+console.log(10 > 5);    // true
+console.log("apple" > "banana"); // false (lexicographical comparison)
+console.log(7 >= 7);   // true
+console.log(4 >= 10);  // false
+console.log(3 < 7);    // true
+console.log("banana" < "apple"); // false (lexicographical comparison)
+console.log(5 <= 5);   // true
+console.log(8 <= 3);   // false
+
+
+
+
+
+
+
