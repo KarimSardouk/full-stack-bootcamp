@@ -86,7 +86,13 @@ console.log(3 < 7);    // true
 console.log("banana" < "apple"); // false (lexicographical comparison)
 console.log(5 <= 5);   // true
 console.log(8 <= 3);   // false
-
+let result0 =   5 + 3 * 2;
+console.log(result0);
+let result1 = 10 / 2 + 3;
+console.log(result1);
+let result2 = 10 / (2+3);
+console.log(result2);
+console.log(result1===result2);
 
 
 
