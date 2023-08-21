@@ -1,7 +1,7 @@
 function addNumbers(num1, num2) {
     return num1 + num2;
 }
-const result= addNumbers(17,19);
+const result = addNumbers(17, 19);
 console.log(result);
 function findMax(num3, num4) {
     if (num3 > num4) {
@@ -81,3 +81,34 @@ squareNumber1(5);
 console.log("Outside squareNumber function:");
 console.log("globalVar:", globalVar); // Accessing the global variable from the global scope
 // Attempting to access localVar from the global scope will result in an error
+
+
+for (i = 1; i < 11; i++) {
+    console.log(i);
+}
+let n = 10;
+while (n>0) {
+    // code block to be executed
+    console.log(n);
+    n--;
+  }
+//do while 
+//Using a do-while loop, print the numbers from 1 to 10, but only print the numbers that are even.
+let m = 1;
+
+do {
+    if (m % 2 === 0) {
+        console.log(m);
+    }
+    m++;
+} while (m <= 10);
+
+//Create an array of your favorite fruits. Using any loop of your choice,
+let favFruits = ["apples", "bananas", "watermelon", "oranges", "pear"];
+
+// Iterate over the array and print out each fruit name only if its length is greater than 5 characters.
+for (const fruit of favFruits) {
+    if (fruit.length > 5) {
+        console.log(fruit);
+    }
+}
