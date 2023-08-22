@@ -59,10 +59,7 @@ const result0 = compute(14, 27, "add");
 console.log(result0); // This will log the result of 41, adding 14 and 27
 
 const squareNumber = (number) => number * number;
-
-// Example usage:
-const result11 = squareNumber(4);
-console.log(result11); // This will log the square of 5, which is 25
+console.log(squareNumber(4));
 
 // Global scope
 let globalVar = 10; // This variable is in the global scope
@@ -112,3 +109,4 @@ for (const fruit of favFruits) {
         console.log(fruit);
     }
 }
+
