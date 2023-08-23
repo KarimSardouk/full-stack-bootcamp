@@ -5,11 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Challenge 5</title>
+  <style>
+    /* CSS to hide the cloned div by default */
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <h1>This is header.</h1>
+    <h1 id="karim">This is header.</h1>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum ipsa,
       voluptas explicabo veniam ipsam temporibus architecto sed optio
@@ -38,7 +44,7 @@
     <label for="email">Email:</label><br>
     <input type="text" id="email" name="email" value="karim_sardouk@hotmail.com"><br><br>
     <input type="submit" value="Submit">
-  </form> 
+  </form>
   <footer>
     <h3>This is footer.</h3>
     <p>
@@ -49,8 +55,11 @@
     </p>
     <button id="demo" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse over me</button>
     <button>Click me</button>
+
+    <button id="removeHeaderButton">Remove Header</button>
   </footer>
 </body>
 <script src="script.js"></script>
+
 
 </html>
