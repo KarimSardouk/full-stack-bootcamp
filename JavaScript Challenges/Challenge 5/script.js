@@ -49,3 +49,59 @@ const headings = document.querySelectorAll('h1, h2, h3');
 headings.forEach((heading) => {
     heading.style.fontStyle = 'italic';
 });
+//Step 2: Event Handling
+// Create a new button element
+const button = document.createElement('button');
+button.textContent = 'Hover Me';
+
+// Add the button to the document body
+document.body.appendChild(button);
+
+// Function to change the button's color when hovering
+function changeColorOnHover() {
+    button.style.backgroundColor = 'red'; // Change the color to red (you can use any color you like)
+}
+
+// Function to revert the button's color when the mouse leaves
+function revertColorOnLeave() {
+    button.style.backgroundColor = ''; // Revert to the default color (empty string)
+}
+
+// Add event listeners to the button
+button.addEventListener('mouseenter', changeColorOnHover);
+button.addEventListener('mouseleave', revertColorOnLeave);
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+//Event delegation
+// Select the container div by its id
+const buttonContainer = document.getElementById('buttonContainer');
+
+// Add a click event listener to the container
+buttonContainer.addEventListener('click', function(event) {
+    // Check if the clicked element is a button
+    if (event.target.tagName === 'BUTTON') {
+        // Log the text content of the clicked button
+        console.log('Clicked button text:', event.target.textContent);
+    }
+});
+const form = document.getElementById('myForm');
+
+        // Add a submit event listener to the form
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Access the form fields and log their values
+            const firstName = document.getElementById('fname').value;
+            const email = document.getElementById('email').value;
+
+            // Log the form data
+            console.log('First Name:', firstName);
+            console.log('Email:', email);
+        });
+
+
