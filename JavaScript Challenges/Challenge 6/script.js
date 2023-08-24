@@ -3,7 +3,7 @@
 setTimeout(myFunction, 5000);
 
 function myFunction() {
-  document.getElementById("demo1").innerHTML = "Hello after 5 seconds!";
+    document.getElementById("demo1").innerHTML = "Hello after 5 seconds!";
 }
 //Repeated Execution
 function updateClock() {
@@ -12,15 +12,16 @@ function updateClock() {
     const minutes = now.getMinutes().toString().padStart(2, '0');
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const timeString = `${hours}:${minutes}:${seconds}`;
-    
-    const clockElement = document.getElementById('demo2'); // Replace 'clock' with the ID of your HTML element
-    if (clockElement) {
-        clockElement.textContent = timeString;
-    }
+
+    console.log(timeString);
 }
 
-// Call the function to display the initial time
+// Call the function immediately to display the initial time
 updateClock();
+
+// Set up an interval to update the clock every second (1000 milliseconds)
+setInterval(updateClock, 1000);
+
 
 // Set up an interval to update the clock every second
 setInterval(updateClock, 1000);
@@ -56,5 +57,42 @@ delayedPromise
         console.error(error); // Handle any errors
     }
 })();
+//Step 3: Advanced Async Patterns
+const postIds = [1, 2, 3];
+const promises = postIds.map((postId) =>
+    fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Network response was not ok for post ${postId}`);
+            }
+            return response.json();
+        })
+);
+
+Promise.all(promises)
+    .then((results) => {
+        // Handle the combined data here
+        console.log(results);
+    })
+    .catch((error) => {
+        console.error(error); // Handle any errors
+    });
+async function fetchPostsSequentially() {
+    const postIds = [4, 5, 6, 7, 8];
+    for (const postId of postIds) {
+        try {
+            const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+            if (!response.ok) {
+                throw new Error(`Network response was not ok for post ${postId}`);
+            }
+            const data = await response.json();
+            console.log(data); // Handle the fetched data
+        } catch (error) {
+            console.error(error); // Handle any errors
+        }
+    }
+}
+
+fetchPostsSequentially();
 
 
