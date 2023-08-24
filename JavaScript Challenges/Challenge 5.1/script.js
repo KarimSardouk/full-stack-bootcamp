@@ -56,5 +56,33 @@ document.addEventListener('keydown', function (event) {
 //Pressing 'D': Append a new paragraph with text "Key D was pressed!" to the display element.done
 //Pressing 'W': Toggle the visibility of the h1 element.done
 //Pressing 'Space': Enlarge the font size of h1 element's text.
+//Step 3
 
+const errorMessages = document.getElementById('errorMessages');
+const successMessage = document.getElementById('successMessage');
+const form = document.getElementById('registrationForm');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    errorMessages.innerHTML = '';
+    successMessage.innerHTML = '';
+
+    if (!isValidEmail(email)) {
+        errorMessages.innerHTML = 'Please enter a valid email address.';
+    }
+    else if (password !== confirmPassword) {
+        errorMessages.innerHTML = 'Passwords do not match.';
+    }
+    else {
+        successMessage.innerHTML = 'Form submitted successfully!';
+    }
+});
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+}
