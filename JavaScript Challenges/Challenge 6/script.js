@@ -43,3 +43,18 @@ delayedPromise
     .catch((error) => {
         console.error(error); // Handle any errors
     });
+//Step 2: Diving Deeper into Async Operations
+(async () => {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let user = await response.json();
+        console.log(user); // Handle the fetched data
+    } catch (error) {
+        console.error(error); // Handle any errors
+    }
+})();
+
+
