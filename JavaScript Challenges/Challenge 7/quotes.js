@@ -94,3 +94,48 @@ const quotesArray = [
       "Hell, there are no rules here-- we're trying to accomplish something.",
   },
 ];
+// Create the blockquote element
+const blockquote = document.createElement('blockquote');
+
+// Set the text content of the blockquote
+blockquote.textContent = "I think that beauty can injure you to death. It can cause an injury that can never be cured. Or it can so traumatize you, your life changes direction. The beauty of the harmony of nature that is forever lost, or a daily rite that you perform, or diving into the sea for a swim. Those experiences are going to mark you.";
+
+// Create the author element (usually a <cite> element)
+const author = document.createElement('cite');
+author.textContent = "Toni Servillo";
+
+// Create the div for the author and append the author element
+const authorDiv = document.createElement('div');
+authorDiv.classList.add('author');
+authorDiv.appendChild(document.createTextNode('— '));
+authorDiv.appendChild(author);
+
+// Append the author div to the blockquote
+blockquote.appendChild(authorDiv);
+
+// Append the blockquote to the document or a parent container
+document.body.appendChild(blockquote);
+// Loop through the quotes array
+for (const quoteObj of quotesArray) {
+  // Create the blockquote element
+  const blockquote = document.createElement('blockquote');
+
+  // Set the text content of the blockquote to the quote's content
+  blockquote.textContent = quoteObj.content;
+
+  // Create the author element (usually a <cite> element)
+  const author = document.createElement('cite');
+  author.textContent = quoteObj.author;
+
+  // Create the div for the author and append the author element
+  const authorDiv = document.createElement('div');
+  authorDiv.classList.add('author');
+  authorDiv.innerHTML = '&mdash;';
+  authorDiv.appendChild(author);
+
+  // Append the author div to the blockquote
+  blockquote.appendChild(authorDiv);
+
+  // Append the blockquote to the document or a parent container
+  document.body.appendChild(blockquote);
+}
