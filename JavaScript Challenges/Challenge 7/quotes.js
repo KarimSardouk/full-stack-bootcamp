@@ -94,48 +94,54 @@ const quotesArray = [
       "Hell, there are no rules here-- we're trying to accomplish something.",
   },
 ];
-// Create the blockquote element
-const blockquote = document.createElement('blockquote');
+// Function to display quotes
+function displayQuotes(quotes) {
+  const quotesContainer = document.getElementById('quotes');
 
-// Set the text content of the blockquote
-blockquote.textContent = "I think that beauty can injure you to death. It can cause an injury that can never be cured. Or it can so traumatize you, your life changes direction. The beauty of the harmony of nature that is forever lost, or a daily rite that you perform, or diving into the sea for a swim. Those experiences are going to mark you.";
+  // Clear the existing quotes
+  quotesContainer.innerHTML = '';
 
-// Create the author element (usually a <cite> element)
-const author = document.createElement('cite');
-author.textContent = "Toni Servillo";
-
-// Create the div for the author and append the author element
-const authorDiv = document.createElement('div');
-authorDiv.classList.add('author');
-authorDiv.appendChild(document.createTextNode('— '));
-authorDiv.appendChild(author);
-
-// Append the author div to the blockquote
-blockquote.appendChild(authorDiv);
-
-// Append the blockquote to the document or a parent container
-document.body.appendChild(blockquote);
-// Loop through the quotes array
-for (const quoteObj of quotesArray) {
-  // Create the blockquote element
-  const blockquote = document.createElement('blockquote');
-
-  // Set the text content of the blockquote to the quote's content
-  blockquote.textContent = quoteObj.content;
-
-  // Create the author element (usually a <cite> element)
-  const author = document.createElement('cite');
-  author.textContent = quoteObj.author;
-
-  // Create the div for the author and append the author element
-  const authorDiv = document.createElement('div');
-  authorDiv.classList.add('author');
-  authorDiv.innerHTML = '&mdash;';
-  authorDiv.appendChild(author);
-
-  // Append the author div to the blockquote
-  blockquote.appendChild(authorDiv);
-
-  // Append the blockquote to the document or a parent container
-  document.body.appendChild(blockquote);
+  // Loop through the filtered quotes and create HTML elements
+  quotes.forEach((quote) => {
+    const blockquote = document.createElement('blockquote');
+    blockquote.innerHTML = `
+      <p>${quote.content}</p>
+      <div class="author">
+        &mdash;
+        <cite>${quote.author}</cite>
+      </div>
+    `;
+    quotesContainer.appendChild(blockquote);
+  });
 }
+
+// Initial display of all quotes
+displayQuotes(quotesArray);
+
+// Function to filter quotes by author name
+function filterQuotesByAuthor(authorName) {
+  const filteredQuotes = quotesArray.filter((quote) =>
+    quote.author.toLowerCase().includes(authorName.toLowerCase())
+  );
+  return filteredQuotes;
+}
+
+// Get references to the input field and filter button
+const authorSearchInput = document.getElementById('authorSearch');
+const authorSearchButton = document.getElementById('authorBtn');
+
+// Add an event listener to the filter button
+authorSearchButton.addEventListener('click', function () {
+  const authorName = authorSearchInput.value.trim();
+  const filteredQuotes = filterQuotesByAuthor(authorName);
+  displayQuotes(filteredQuotes);
+});
+
+// Handle Enter key press in the input field
+authorSearchInput.addEventListener('keyup', function (event) {
+  if (event.key === 'Enter') {
+    const authorName = authorSearchInput.value.trim();
+    const filteredQuotes = filterQuotesByAuthor(authorName);
+    displayQuotes(filteredQuotes);
+  }
+});
