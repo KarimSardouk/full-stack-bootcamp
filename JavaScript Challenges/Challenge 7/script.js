@@ -61,6 +61,11 @@ submitButton.classList.add('filled-btn');
 submitButton.setAttribute('id', 'submit-btn');
 submitButton.textContent = 'Submit';
 
+// Create an error message element
+const errorText = document.createElement('div');
+errorText.setAttribute('id', 'error-text');
+errorText.style.color = 'red';
+
 // Append the elements to the "loginSigninNow" div in the correct order
 loginSigninNow.appendChild(h1);
 loginSigninNow.appendChild(h3);
@@ -69,6 +74,7 @@ form.appendChild(emailLabel);
 form.appendChild(passwordLabel);
 form.appendChild(cPasswordLabel);
 form.appendChild(submitButton);
+form.appendChild(errorText); // Append error message element
 
 // Append the "loginSigninNow" div to the "login__signin" div
 loginSignin.appendChild(loginSigninNow);
@@ -81,3 +87,19 @@ container.appendChild(loginContainer);
 
 // Append the "container" div to the body
 document.body.appendChild(container);
+
+// Event listener for form submission
+submitButton.addEventListener('click', function (e) {
+  e.preventDefault(); // Prevent form submission to handle validation
+
+  const password = passwordInput.value;
+  const cPassword = cPasswordInput.value;
+
+  if (password === cPassword) {
+    // Passwords match, redirect to another HTML page
+    window.location.href = 'quotes.html';
+  } else {
+    // Passwords do not match, display an error message
+    errorText.textContent = 'Passwords do not match';
+  }
+});
