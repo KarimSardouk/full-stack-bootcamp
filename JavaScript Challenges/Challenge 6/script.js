@@ -23,8 +23,6 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
-// Set up an interval to update the clock every second
-setInterval(updateClock, 1000);
 // Delayed Promise
 const delayedPromise = new Promise((resolve, reject) => {
     setTimeout(() => {
