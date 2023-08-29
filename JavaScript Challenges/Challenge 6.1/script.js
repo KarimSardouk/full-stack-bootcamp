@@ -18,3 +18,14 @@ fetch('https://uselessfacts.jsph.pl/random.json?language=en')
     });
 //Step 3: Rewrite with Async/Await
 //Using async/await, rewrite the previous challenge (fetching a random fact) to achieve the same result
+async function fetchData() {
+    try {
+      let response = await fetch("https://uselessfacts.jsph.pl/random.json?language=en");
+      let data = await response.json();
+      console.log(data.text);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
+  fetchData();
+  
