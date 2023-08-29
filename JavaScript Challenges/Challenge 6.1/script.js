@@ -28,4 +28,21 @@ async function fetchData() {
     }
   }
   fetchData();
+//Step 4: Fetch Multiple Dog Images
+//You have an array of URLs. Fetch images from all these URLs simultaneously and log the results
+async function fetchMultiple() {
+    try {
+        let [data1, data2, data3] = await Promise.all([
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json()),
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json()),
+            fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json())
+        ]);
+
+        console.log(data1, data2, data3);
+    } catch (error) {
+        console.log("Error fetching data:", error);
+    }
+}
+
+fetchMultiple();
   
